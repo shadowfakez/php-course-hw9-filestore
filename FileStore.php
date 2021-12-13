@@ -39,7 +39,7 @@ class FileStore implements \Iterator
 
     public function valid()
     {
-        if (!$this->next()) {
+        if (feof($this->file)) {
             fclose($this->file);
             return false;
         }
